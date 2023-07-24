@@ -24,7 +24,6 @@ public class TicTacToeTest {
 	public static final String ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD = "Y value is outside the board!";
 	public static final String X_IS_THE_WINNER = "X is the Winner";
 
-
 	@Test
 	public void initializeNewTicTacToeGame() {
 		assertNotNull(ticTacToe);
@@ -81,6 +80,17 @@ public class TicTacToeTest {
 		ticTacToe.play(2, 2); // O
 		String actual = ticTacToe.play(3, 1); // X
 		assertEquals(X_IS_THE_WINNER, actual);
+	}
+
+	@Test
+	public void playWithHorizontalLine() {
+		ticTacToe.play(2, 1); // X
+		ticTacToe.play(1, 1); // O
+		ticTacToe.play(3, 1); // X
+		ticTacToe.play(1, 2); // O
+		ticTacToe.play(2, 2); // X
+		String actual = ticTacToe.play(1, 3); // O
+		assertEquals("O is the Winner", actual);
 	}
 
 }
