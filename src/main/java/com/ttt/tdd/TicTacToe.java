@@ -47,10 +47,10 @@ public class TicTacToe {
 			if (board[0][i] == lastPlayer && board[1][i] == lastPlayer && board[2][i] == lastPlayer
 					|| board[i][0] == lastPlayer && board[i][1] == lastPlayer && board[i][2] == lastPlayer) {
 				return true;
-			} else if (board[0][0] == lastPlayer && board[1][1] == lastPlayer && board[2][2] == lastPlayer)
+			} else if (board[0][0] == lastPlayer && board[1][1] == lastPlayer && board[2][2] == lastPlayer
+					|| board[2][0] == lastPlayer && board[1][1] == lastPlayer && board[0][2] == lastPlayer)
 				return true;
-			else if (board[2][0] == lastPlayer && board[1][1] == lastPlayer && board[0][2] == lastPlayer)
-				return true;
+
 		}
 		return false;
 	}
