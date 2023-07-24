@@ -71,4 +71,14 @@ public class TicTacToeTest {
 		assertTrue(actualMessage.contains(expectedMessage));
 	}
 
+	@Test
+	public void playWithVerticalLine() {
+		ticTacToe.play(1, 1); // X
+		ticTacToe.play(1, 2); // O
+		ticTacToe.play(2, 1); // X
+		ticTacToe.play(2, 2); // O
+		String actual = ticTacToe.play(3, 1); // X
+		assertEquals("X is the Winner", actual);
+	}
+
 }
