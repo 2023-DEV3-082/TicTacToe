@@ -6,10 +6,12 @@ public class TicTacToe {
 
 	private Character[][] board = { { '\0', '\0', '\0' }, { '\0', '\0', '\0' }, { '\0', '\0', '\0' } };
 	private char lastPlayer = '\0';
+	public static final String ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD = "X value is outside the board!";
+	public static final String ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD = "Y value is outside the board!";
 
 	public String play(int column, int row) {
-		checkAxis(column, "X value is outside the board!");
-		checkAxis(row, "Y value is outside the board!");
+		checkAxis(column, ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD);
+		checkAxis(row, ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD);
 		lastPlayer = nextPlayer();
 		setField(column, row, "Field is occupied!", lastPlayer);
 		if (isWinner()) {
