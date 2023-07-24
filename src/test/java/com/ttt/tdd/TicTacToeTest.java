@@ -21,6 +21,7 @@ public class TicTacToeTest {
 	public static final Character SECOND_PLAYER = 'O';
 	public static final String FFIELD_IS_OCCUPIED = "Field is occupied!";
 	public static final String ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD = "X value is outside the board!";
+	public static final String ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD = "Y value is outside the board!";
 
 	@Test
 	public void initializeNewTicTacToeGame() {
@@ -59,13 +60,13 @@ public class TicTacToeTest {
 		String actualMessage = exception.getMessage();
 		assertTrue(actualMessage.contains(expectedMessage));
 	}
-	
+
 	@Test
 	public void whenYOutsideBoardThenRuntimeException() {
 		Exception exception = assertThrows(TicTacToeException.class, () -> {
 			ticTacToe.play(2, 6);
 		});
-		String expectedMessage = "Y value is outside the board!";
+		String expectedMessage = ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD;
 		String actualMessage = exception.getMessage();
 		assertTrue(actualMessage.contains(expectedMessage));
 	}
