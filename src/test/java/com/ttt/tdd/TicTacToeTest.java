@@ -41,4 +41,10 @@ public class TicTacToeTest {
 		assertEquals(FIRST_PLAYER, ticTacToe.nextPlayer());
 	}
 
+	@Test
+	public void givenLastTurnWasXWhenNextPlayerShouldBeO() {
+		ticTacToe.play(1, 1);
+		assertEquals('O', ticTacToe.nextPlayer());
+	}
+
 }
