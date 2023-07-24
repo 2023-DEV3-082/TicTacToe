@@ -23,6 +23,8 @@ public class TicTacToeTest {
 	public static final String ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD = "X value is outside the board!";
 	public static final String ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD = "Y value is outside the board!";
 	public static final String X_IS_THE_WINNER = "X is the Winner";
+	public static final String O_IS_THE_WINNER = "O is the Winner";
+
 
 	@Test
 	public void initializeNewTicTacToeGame() {
@@ -90,7 +92,7 @@ public class TicTacToeTest {
 		ticTacToe.play(1, 2); // O
 		ticTacToe.play(2, 2); // X
 		String actual = ticTacToe.play(1, 3); // O
-		assertEquals("O is the Winner", actual);
+		assertEquals(O_IS_THE_WINNER, actual);
 	}
 
 }
