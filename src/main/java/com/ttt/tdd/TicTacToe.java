@@ -1,20 +1,18 @@
 package com.ttt.tdd;
 
+import com.ttt.constants.TicTacToeConstants;
 import com.ttt.exceptions.TicTacToeException;
 
 public class TicTacToe {
 
 	private Character[][] board = { { '\0', '\0', '\0' }, { '\0', '\0', '\0' }, { '\0', '\0', '\0' } };
 	private char lastPlayer = '\0';
-	public static final String ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD = "X value is outside the board!";
-	public static final String ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD = "Y value is outside the board!";
-	public static final String FIELD_IS_OCCUPIED = "Field is occupied!";
 
 	public String play(int column, int row) {
-		checkAxis(column, ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD);
-		checkAxis(row, ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD);
+		checkAxis(column, TicTacToeConstants.ERROR_MSG_OF_X_VALUE_IF_OUTSIDE_THE_BOARD);
+		checkAxis(row, TicTacToeConstants.ERROR_MSG_OF_Y_VALUE_IF_OUTSIDE_THE_BOARD);
 		lastPlayer = nextPlayer();
-		setField(column, row, FIELD_IS_OCCUPIED, lastPlayer);
+		setField(column, row, TicTacToeConstants.FIELD_IS_OCCUPIED, lastPlayer);
 		if (isWinner()) {
 			return lastPlayer + " is the Winner";
 		} else if (isDraw()) {
