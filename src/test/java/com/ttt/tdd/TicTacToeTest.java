@@ -19,6 +19,8 @@ public class TicTacToeTest {
 	public ExpectedException exception = ExpectedException.none();
 	public static final Character FIRST_PLAYER = 'X';
 	public static final Character SECOND_PLAYER = 'O';
+	public static final String FFIELD_IS_OCCUPIED = "Field is occupied!";
+
 
 	@Test
 	public void initializeNewTicTacToeGame() {
@@ -32,7 +34,7 @@ public class TicTacToeTest {
 		Exception exception = assertThrows(TicTacToeException.class, () -> {
 			ticTacToe.play(2, 1);
 		});
-		String expectedMessage = "Field is occupied!";
+		String expectedMessage = FFIELD_IS_OCCUPIED;
 		String actualMessage = exception.getMessage();
 		assertTrue(actualMessage.contains(expectedMessage));
 	}
