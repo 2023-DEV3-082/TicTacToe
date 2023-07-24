@@ -104,5 +104,15 @@ public class TicTacToeTest {
 		assertEquals(X_IS_THE_WINNER, actual);
 
 	}
+	
+	@Test
+    public void playWithRightDiagonal() {
+        ticTacToe.play(1,3); // X
+        ticTacToe.play(1,1); // O
+        ticTacToe.play(2,2); // X
+        ticTacToe.play(1,2); // O
+        String actual = ticTacToe.play(3,1); // X
+        assertEquals(X_IS_THE_WINNER, actual);
+    }
 
 }
