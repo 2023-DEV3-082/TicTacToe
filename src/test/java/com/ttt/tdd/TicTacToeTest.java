@@ -59,5 +59,15 @@ public class TicTacToeTest {
 		String actualMessage = exception.getMessage();
 		assertTrue(actualMessage.contains(expectedMessage));
 	}
+	
+	@Test
+	public void whenYOutsideBoardThenRuntimeException() {
+		Exception exception = assertThrows(TicTacToeException.class, () -> {
+			ticTacToe.play(2, 6);
+		});
+		String expectedMessage = "Y value is outside the board!";
+		String actualMessage = exception.getMessage();
+		assertTrue(actualMessage.contains(expectedMessage));
+	}
 
 }
