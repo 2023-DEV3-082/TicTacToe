@@ -17,8 +17,11 @@ public class TicTacToe {
 		setField(column, row, FIELD_IS_OCCUPIED, lastPlayer);
 		if (isWinner()) {
 			return lastPlayer + " is the Winner";
+		} else if (isDraw()) {
+			return "It is a draw";
+		} else {
+			return "No winner";
 		}
-		return "No winner";
 	}
 
 	public char nextPlayer() {
@@ -53,6 +56,17 @@ public class TicTacToe {
 
 		}
 		return false;
+	}
+
+	private boolean isDraw() {
+		for (int x = 0; x < 3; x++) {
+			for (int y = 0; y < 3; y++) {
+				if (board[x][y] == '\0') {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 }
