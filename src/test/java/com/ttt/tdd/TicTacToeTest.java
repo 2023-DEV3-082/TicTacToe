@@ -25,7 +25,6 @@ public class TicTacToeTest {
 	public static final String X_IS_THE_WINNER = "X is the Winner";
 	public static final String O_IS_THE_WINNER = "O is the Winner";
 
-
 	@Test
 	public void initializeNewTicTacToeGame() {
 		assertNotNull(ticTacToe);
@@ -93,6 +92,17 @@ public class TicTacToeTest {
 		ticTacToe.play(2, 2); // X
 		String actual = ticTacToe.play(1, 3); // O
 		assertEquals(O_IS_THE_WINNER, actual);
+	}
+
+	@Test
+	public void playWithLeftDiagonal() {
+		ticTacToe.play(1, 1); // X
+		ticTacToe.play(1, 2); // O
+		ticTacToe.play(2, 2); // X
+		ticTacToe.play(1, 3); // O
+		String actual = ticTacToe.play(3, 3); // X
+		assertEquals(X_IS_THE_WINNER, actual);
+
 	}
 
 }
